@@ -1,15 +1,138 @@
-<!DOCTYPE html>
-<html>
-<head></head>
-  <body>
-    <style>
-    </style>
-      <div>
-      
-      <!-- Insert your code here -->
-      
-      </div>
-    <script>
-    </script>
-  <body>
-</html>
+<html><head></head>
+		
+	<body style="margin:0;">
+		<style>
+			div.inline {
+				display: inline-block;
+				margin:0;
+			}
+			.slider {
+				width: 100%;
+				#color: white;
+				position: relative;
+				font-size: 2vw;
+				font-family: Open Sans;
+				text-align: center;
+			}
+			.slider h1 {
+				font-weight: 700;
+			}
+			.projects {
+				width: 16%;
+				padding: 2%;
+				display: block;
+				position: relative;
+				vertical-align: middle;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				border-style: solid;
+				border-color: red;
+				border-width: 0px 0px 3px 0px;
+				-webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+				-moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+				box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+				cursor:pointer;
+			}
+			.opctyoff {
+				opacity: 1;
+			}
+			.opcty {
+				opacity: 0.8;
+				transition-duration: 0.5s;
+			}
+			.opcty:hover{
+				opacity: 1;
+				transition-duration: 0.5s;
+			}
+			.project {
+				width: 100%;
+				height: 300px;
+				display: block;
+				margin-right: auto;
+				margin-left: auto;
+				position: relative;
+				background-size: cover;
+				background-repeat: no-repeat;
+				background-position: center;
+				-webkit-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+				-moz-box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+				box-shadow: 0px 0px 10px 5px rgba(0,0,0,0.1);
+			}
+			.displnone {
+				display: none;
+			}
+			.ejf {
+				background-image: url('ejf.jpg');
+			}
+			.hack {
+				background-image: url('hack.jpg');
+			}
+			.course {
+				background-image: url('course.jpg');
+			}
+			.btw {
+				background-image: url('btw.jpg');
+			}
+			.ebec {
+				background-image: url('ebec.jpg');
+			}
+
+		</style>
+		<div class="slider">
+		
+		<!-- Insert your code here -->
+		<div><!-- ejf -->
+			<div class="projects ejf inline opcty" onclick="currentDiv(1)">
+				<h1>EJF</h1>
+				<h3>APR</h3>
+				<a href="https://best-lviv.org.ua/ejf">visit website</a>
+			</div><!-- hack --><div class="projects hack inline opcty" onclick="currentDiv(2)">
+				<h1>Hack</h1>
+				<h3>MAY</h3>
+				<a href="https://best-lviv.org.ua/hack">visit website</a>
+			</div><!-- course --><div class="projects course inline opcty" onclick="currentDiv(3)">
+				<h1>Course</h1>
+				<h3>JUL</h3>
+				<a href="https://best-lviv.org.ua/course">visit website</a>
+			</div><!-- btw --><div class="projects btw inline opcty" onclick="currentDiv(4)">
+				<h1>BTW</h1>
+				<h3>SEP</h3>
+				<a href="https://best-lviv.org.ua/btw">visit website</a>
+			</div><!-- ebec --><div class="projects ebec inline opcty" onclick="currentDiv(5)">
+				<h1>EBEC</h1>
+				<h3>NOV</h3>
+				<a href="https://best-lviv.org.ua/ebec">visit website</a>
+			</div>
+			<div class="project ejf"></div>
+			<div class="project hack displnone"></div>
+			<div class="project course displnone"></div>
+			<div class="project btw displnone"></div>
+			<div class="project ebec displnone"></div>
+		</div>
+		</div>
+	
+		<script>
+		function currentDiv(n) {
+		  showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+		  var i;
+		  var x = document.getElementsByClassName("project");
+		  var dots = document.getElementsByClassName("projects");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" opcty-off", "");
+		  }
+		  x[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " opcty-off";
+		}
+		</script>
+	
+
+</body></html>
